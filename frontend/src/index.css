@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F5F0E6; /* Beige Background */
+  --color-foreground: #000000; /* Black Text */
+  --color-primary: #000000; /* Black Buttons */
+  --color-primary-hover: #333333; 
+  --color-secondary: #E8DFC8; /* Darker Beige */
+  --color-secondary-light: #ffffff; /* White Cards */
+  
+  --animate-fade-in: fadeIn 0.5s ease-out;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-secondary); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-foreground); 
+  border-radius: 4px;
+}
