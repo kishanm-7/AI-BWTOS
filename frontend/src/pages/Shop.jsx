@@ -55,11 +55,16 @@ const Shop = () => {
         <div className="flex justify-center items-center h-64">
           <Loader2 className="w-12 h-12 animate-spin text-gray-400" />
         </div>
-      ) : (
+      ) : products.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map(product => (
             <ProductCard key={product._id} product={product} />
           ))}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center h-[50vh] bg-white rounded-[2.5rem] border border-gray-100 shadow-sm mt-8 p-8 text-center">
+          <h2 className="text-3xl font-bold text-black mb-4">No Products Found</h2>
+          <p className="text-gray-500 text-lg max-w-md">We couldn't find any products in this category right now. Please try checking back later or clearing your filters.</p>
         </div>
       )}
     </div>

@@ -6,6 +6,8 @@ import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
 import { AuthProvider } from './context/AuthContext'
 import { CartProvider } from './context/CartContext'
@@ -28,6 +30,14 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={
+                  <div className="flex flex-col items-center justify-center h-[60vh]">
+                    <h1 className="text-4xl font-bold text-black mb-4">404 - Page Not Found</h1>
+                    <p className="text-gray-500 mb-8">The page you are looking for doesn't exist.</p>
+                  </div>
+                } />
               </Routes>
             </main>
             <Footer />
