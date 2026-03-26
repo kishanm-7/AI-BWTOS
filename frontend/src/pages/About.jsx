@@ -2,9 +2,9 @@ const About = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 min-h-screen">
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-black mb-6">About Tech Gadgets</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-black mb-6">About Premium Resellers</h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Welcome to Tech Gadgets. We are passionate about curating the most premium, high-performance technology accessories and devices for the modern lifestyle. Our mission is to bridge the gap between elegant design and cutting-edge functionality.
+          Welcome to Premium Resellers. We are passionate about curating the most premium, high-performance technology accessories and devices for the modern lifestyle. Our mission is to bridge the gap between elegant design and cutting-edge functionality.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
           <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100">

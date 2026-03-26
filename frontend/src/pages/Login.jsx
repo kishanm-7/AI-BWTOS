@@ -40,7 +40,7 @@ const Login = () => {
             {isLogin ? 'Sign In' : 'Create Account'}
           </h2>
           <p className="text-gray-500 font-medium">
-            {isLogin ? 'Use your Tech Gadgets ID' : 'Join the Tech Gadgets ecosystem'}
+            {isLogin ? 'Use your Premium Resellers ID' : 'Join the Premium Resellers ecosystem'}
           </p>
         </div>
 
@@ -116,7 +116,7 @@ const Login = () => {
 
           <div className="mt-8 text-center text-sm">
             <p className="text-gray-500">
-              {isLogin ? 'New to Tech Gadgets?' : 'Already have an account?'}
+              {isLogin ? 'New to Premium Resellers?' : 'Already have an account?'}
               <button 
                 onClick={() => setIsLogin(!isLogin)}
                 className="ml-2 font-bold text-blue-600 hover:underline"

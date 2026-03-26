@@ -19,8 +19,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-2xl font-bold tracking-tighter text-black">
-              TECH GADGETS
+            <Link to="/" className="text-2xl font-bold tracking-tighter flex items-center gap-1 group">
+              <span className="text-black">PREMIUM</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-black">RESELLERS</span>
             </Link>
           </div>
           
