@@ -20,9 +20,10 @@ const Shop = () => {
         }
         const res = await fetch(url);
         const data = await res.json();
-        setProducts(data);
+        console.log(`[DEBUG] Fetched products for category (${filter}):`, data);
+        setProducts(Array.isArray(data) ? data : []);
       } catch (err) {
-        console.error('Failed to fetch products', err);
+        console.error('[ERROR] Failed to fetch products:', err);
       } finally {
         setLoading(false);
       }
@@ -55,7 +56,7 @@ const Shop = () => {
         <div className="flex justify-center items-center h-64">
           <Loader2 className="w-12 h-12 animate-spin text-gray-400" />
         </div>
-      ) : products.length > 0 ? (
+      ) : (Array.isArray(products) && products.length > 0) ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map(product => (
             <ProductCard key={product._id} product={product} />

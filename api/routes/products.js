@@ -8,9 +8,16 @@ productsData.forEach((p, i) => p._id = (i + 1).toString());
 router.get('/', (req, res) => {
   let { category, brand, maxPrice } = req.query;
   let results = [...productsData];
-  if (category && category !== 'All') results = results.filter(p => p.category === category);
-  if (brand && brand !== 'All') results = results.filter(p => p.brand === brand);
-  if (maxPrice) results = results.filter(p => p.price <= Number(maxPrice));
+  if (category && category.toLowerCase() !== 'all') {
+    results = results.filter(p => p.category && p.category.toLowerCase() === category.toLowerCase());
+  }
+  if (brand && brand.toLowerCase() !== 'all') {
+    results = results.filter(p => p.brand && p.brand.toLowerCase() === brand.toLowerCase());
+  }
+  if (maxPrice) {
+    results = results.filter(p => p.price <= Number(maxPrice));
+  }
+  
   res.json(results);
 });
 
