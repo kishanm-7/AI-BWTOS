@@ -19,7 +19,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await fetch('http://localhost:5001/api/auth/login', {
+      const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:5001' : '';
+      const res = await fetch(`${baseUrl}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -39,7 +40,8 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const res = await fetch('http://localhost:5001/api/auth/register', {
+      const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:5001' : '';
+      const res = await fetch(`${baseUrl}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })

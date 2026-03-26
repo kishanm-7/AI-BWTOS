@@ -22,3 +22,5 @@ app.get('/api/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running instantly in in-memory mock mode on port ${PORT}`);
 });
+
+module.exports = app;

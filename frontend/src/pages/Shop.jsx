@@ -13,7 +13,8 @@ const Shop = () => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        let url = 'http://localhost:5001/api/products';
+        const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:5001' : '';
+        let url = `${baseUrl}/api/products`;
         if (filter !== 'All') {
           url += `?category=${filter}`;
         }

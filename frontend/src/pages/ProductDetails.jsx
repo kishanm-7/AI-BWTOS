@@ -14,7 +14,8 @@ const ProductDetails = () => {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5001/api/products/${id}`);
+        const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:5001' : '';
+        const res = await fetch(`${baseUrl}/api/products/${id}`);
         const data = await res.json();
         setProduct(data);
       } catch (err) {

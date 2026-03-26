@@ -43,7 +43,8 @@ const Checkout = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:5001/api/orders', {
+      const baseUrl = window.location.hostname === 'localhost' ? 'http://localhost:5001' : '';
+      const res = await fetch(`${baseUrl}/api/orders`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
